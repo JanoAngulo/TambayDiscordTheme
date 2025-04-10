@@ -1,0 +1,105 @@
+.vc-ranb-button {
+    border: 0;
+}
+
+.visual-refresh .panels_c48ade {
+    border-radius: unset;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+:root {
+    --tambay-primary: #dc794e;
+    --tambay-secondary: #613e31;
+    --tambay-tertiary: #f2af45;
+    --background-modifier-active: #352c28;
+}
+
+/* Sidebar Left  */
+[aria-label="Tambay sa Skwela (server)"] {
+
+    .containerDefault__29444 {
+        .wrapper__29444:hover .icon__29444 {
+            color: var(--tambay-primary) !important;
+        }
+
+        .mainContent__29444 {
+            color: var(--tambay-primary);
+
+            .overflow__82b15 {
+                color: var(--tambay-primary);
+            }
+        }
+    }
+
+    .flowerStar__3e3b0 {
+        path {
+            fill: var(--tambay-tertiary) !important;
+        }
+    }
+
+    .thin__99f8c::-webkit-scrollbar-thumb {
+        background-color: var(--tambay-primary);
+    }
+
+    .modeUnreadImportant__2ea32 .name__2ea32 {
+        color: var(--tambay-tertiary);
+    }
+
+    .unreadImportant__2ea32 {
+        background-color: var(--tambay-tertiary);
+    }
+
+    .container_eff079:hover .progressBar_eff079 {
+        background: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
+    }
+
+    .progressBar_eff079 {
+        background: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
+    }
+
+    .selected_c69b6d {
+        a {
+            background: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
+        }
+    }
+
+    .modeSelected__2ea32 .link__2ea32,
+    .modeSelected__2ea32:hover .link__2ea32 {
+        background: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
+    }
+
+    .modeSelected__2ea32 {
+        border-radius: var(--radius-sm);
+
+        .linkBottom__2ea32 {
+            div {
+                color: white;
+            }
+        }
+
+        .icon__2ea32 {
+            color: white;
+        }
+
+        .children__2ea32 {
+            .actionIcon_c69b6d {
+                color: white;
+            }
+        }
+
+        .wrapper__2ea32:hover {
+            background-color: white !important;
+        }
+
+        .name__2ea32 {
+            color: white;
+        }
+
+        .pencilIcon__5cda9,
+        .statusText__5cda9 {
+            color: white;
+        }
+    }
+}
