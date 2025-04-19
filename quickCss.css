@@ -16,8 +16,118 @@
     --background-modifier-active: #352c28;
 }
 
+[ data-dnd-name="Tambay sa Skwela"].selected_e5445c {
+    .icon__6e9f8 {
+        border-radius: 999px;
+    }
+
+    border-radius: 999px;
+    -webkit-box-shadow: 0px 0px 28px 0px rgba(242, 176, 69, 0.9);
+    -moz-box-shadow: 0px 0px 28px 0px rgba(242, 176, 69, 0.9);
+    box-shadow: 0px 0px 28px 0px rgba(242, 176, 69, 0.9);
+}
+
+.listItem__650eb:has([data-dnd-name="Tambay sa Skwela"]) .item__58105 {
+    background: linear-gradient(30deg, var(--tambay-primary), var(--tambay-tertiary));
+}
+
+/* useless-important-infos */
+[aria-label="welcome (channel)"],
+[aria-label="announcements (channel)"],
+[aria-label="introduce-yourself (channel)"],
+[aria-label="free-games (channel)"],
+[aria-label="ranks (channel)"],
+
+/* Administrator Only */
+[aria-label="audit-logs (channel)"],
+[aria-label="private-saves (channel)"],
+[aria-label="principals (channel)"],
+
+/* Gawa Laro */
+[aria-label="project-1 (channel)"],
+[aria-label="p1-brainstorm (channel)"],
+[aria-label="p1-concept-art (channel)"],
+[aria-label="p1-storyboard (channel)"],
+[aria-label="p1-game-mechanics (channel)"],
+[aria-label="p1-sound-design (channel)"],
+[aria-label="p1-references (channel)"],
+
+/* Kings & Queens */
+[aria-label="voice-chat (channel)"],
+[aria-label="nsfw (channel)"],
+[aria-label="council-of-six (channel)"],
+[aria-label="council-saves (channel)"],
+[aria-label="pandoras-box (channel)"],
+[aria-label="clipped-voices (channel)"],
+[aria-label="instant-replays (channel)"],
+[aria-label="bot-commands-◉_◉ (channel)"],
+[aria-label="random-tots (channel)"],
+
+/* Games Stuff */
+[aria-label="games🎮🎮 (channel)"],
+[aria-label="genshin-notes (channel)"],
+[aria-label="hsr-notes (channel)"],
+[aria-label="genshin-wizard (channel)"],
+[aria-label="league-patch-notes (channel)"],
+[aria-label="overwatch-notes (channel)"],
+[aria-label="mc-notes (channel)"],
+[aria-label="pso2-notes (channel)"],
+[aria-label="minecraft (channel)"],
+[aria-label="monster-hunter (channel)"],
+[aria-label="pso2 (channel)"],
+[aria-label="aq-ni-kurt (channel)"],
+[aria-label="play-chess (channel)"],
+
+/* Overview */
+[aria-label="general👨👩 (channel)"],
+[aria-label="suggestions (channel)"],
+[aria-label="tier-list (channel)"],
+
+/* Dank Stuff */
+[aria-label="dank-memes-💩 (channel)"],
+[aria-label="wholesome-posting (channel)"],
+[aria-label="share-videos (channel)"],
+[aria-label="bot-commands-◉_◉ (channel)"],
+
+/* Game Channel */
+[aria-label="voice-chat (channel)"],
+
+/* Study Room */
+[aria-label="study📘📗📖 (channel)"],
+
+/* Solitary Confinement */
+[aria-label="cotton-fields (channel)"] {
+    .content__908e2 {
+        color: var(--tambay-tertiary) !important;
+    }
+
+    .hasContent__5126c {
+        border-top: thin solid var(--tambay-secondary) !important;
+    }
+
+    .timestamp_c19a55 {
+        color: var(--tambay-tertiary) !important;
+    }
+
+    .vc-smyn-suffix {
+        color: var(--tambay-primary) !important;
+    }
+}
+
 /* Sidebar Left  */
 [aria-label="Tambay sa Skwela (server)"] {
+
+    .bar__7aaec {
+        background-color: var(--tambay-tertiary);
+    }
+
+    .unreadIcon__7aaec {
+        color: var(--tambay-secondary) !important;
+    }
+
+    .barText__7aaec {
+        color: var(--tambay-secondary) !important;
+    }
 
     .containerDefault__29444 {
         .wrapper__29444:hover .icon__29444 {
