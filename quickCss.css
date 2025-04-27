@@ -119,7 +119,11 @@
 }
 
 .base_c48ade:has([aria-label="Tambay sa Skwela (server)"]) .bar_c38106 {
-    background: linear-gradient(90deg, var(--tambay-tertiary), var(--tambay-primary)) !important;
+    background: linear-gradient(90deg, #121214 10%, var(--tambay-tertiary) 50%, #121214 90%) !important;
+
+    .defaultColor__4bd52 {
+        color: #121214 !important;
+    }
 
     svg {
         color: white !important;
