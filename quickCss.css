@@ -1,3 +1,4 @@
+
 .vc-ranb-button {
     border: 0;
 }
@@ -97,7 +98,9 @@
 
 /* Solitary Confinement */
 [aria-label="cotton-fields (channel)"] {
-    .content__908e2 {
+
+    .content__908e2,
+    .vc-smyn-suffix {
         color: var(--tambay-tertiary) !important;
     }
 
@@ -109,7 +112,45 @@
         color: var(--tambay-tertiary) !important;
     }
 
-    .vc-smyn-suffix {
+    .newMessagesBar__0f481.barBase__0f481 {
+        background-color: var(--tambay-primary);
+    }
+
+}
+
+.base_c48ade:has([aria-label="Tambay sa Skwela (server)"]) .bar_c38106 {
+    background: linear-gradient(90deg, var(--tambay-tertiary), var(--tambay-primary)) !important;
+
+    svg {
+        color: white !important;
+    }
+}
+
+.sidebar_c48ade:has([aria-label="Tambay sa Skwela (server)"])~.page_c48ade {
+    .subtitleContainer_f75fb0 {
+        .children__9293f {
+            .titleWrapper__9293f {
+                h1 {
+                    color: var(--tambay-tertiary) !important;
+                }
+            }
+
+            svg {
+                color: var(--tambay-tertiary) !important;
+            }
+        }
+
+
+    }
+}
+
+/* Sidebar Right */
+[aria-label="council-of-six (channel)"]~.container_c8ffbb {
+    .premiumIcon__5d473 {
+        color: var(--tambay-tertiary) !important;
+    }
+
+    .membersGroup_c8ffbb:not(:first-of-type) {
         color: var(--tambay-primary) !important;
     }
 }
@@ -117,14 +158,16 @@
 /* Sidebar Left  */
 [aria-label="Tambay sa Skwela (server)"] {
 
+    .icon__07f91,
+    .addButtonIcon__29444 {
+        color: var(--tambay-tertiary);
+    }
+
     .bar__7aaec {
         background-color: var(--tambay-tertiary);
     }
 
-    .unreadIcon__7aaec {
-        color: var(--tambay-secondary) !important;
-    }
-
+    .unreadIcon__7aaec,
     .barText__7aaec {
         color: var(--tambay-secondary) !important;
     }
