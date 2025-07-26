@@ -1,14 +1,5 @@
-
-.vc-ranb-button {
-    border: 0;
-}
-
-.visual-refresh .panels_c48ade {
-    border-radius: unset;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-}
+/* @import url(https://raw.githubusercontent.com/JanoAngulo/TambayDiscordTheme/refs/heads/main/quickCss.css); */
+/* Ctrl + shift + i = open discord console */
 
 :root {
     --tambay-primary: #dc794e;
@@ -17,6 +8,20 @@
     --background-modifier-active: #352c28;
 }
 
+/* Read All Button Fix */
+.vc-ranb-button {
+    border: 0;
+}
+
+/* Hideous Panel Fix */
+.visual-refresh .panels_c48ade {
+    border-radius: unset;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Tambay sa Skwela Icon */
 [ data-dnd-name="Tambay sa Skwela"].selected_e5445c {
     .icon__6e9f8 {
         border-radius: 999px;
@@ -28,6 +33,7 @@
     box-shadow: 0px 0px 28px 0px rgba(242, 176, 69, 0.9);
 }
 
+/* Tambay sa Skwela Icon */
 .listItem__650eb:has([data-dnd-name="Tambay sa Skwela"]) .item__58105 {
     background: linear-gradient(30deg, var(--tambay-primary), var(--tambay-tertiary));
 }
@@ -104,10 +110,12 @@
         color: var(--tambay-tertiary) !important;
     }
 
+    /* Thread Bar <hr/> Color */
     .hasContent__5126c {
         border-top: thin solid var(--tambay-secondary) !important;
     }
 
+    /* Chat Timestamp Color */
     .timestamp_c19a55 {
         color: var(--tambay-tertiary) !important;
     }
@@ -115,7 +123,6 @@
     .newMessagesBar__0f481.barBase__0f481 {
         background-color: var(--tambay-primary);
     }
-
 }
 
 /* Top Bar Shade  */
@@ -136,6 +143,7 @@
     }
 }
 
+/* Subtitle Container Bar - The one with Search */
 .sidebar_c48ade:has([aria-label="Tambay sa Skwela (server)"])~.page_c48ade {
     .subtitleContainer_f75fb0 {
         .children__9293f {
@@ -149,8 +157,6 @@
                 color: var(--tambay-tertiary) !important;
             }
         }
-
-
     }
 }
 
@@ -168,20 +174,48 @@
 /* Sidebar Left  */
 [aria-label="Tambay sa Skwela (server)"] {
 
+    /* Live Icon */
+    .live_a7acae {
+        background-color: var(--tambay-tertiary) !important;
+        color: var(--tambay-secondary);
+    }
+
+    /* Chiplet Container */
+    .chipletContainerInner__10651 {
+        background-color: var(--tambay-primary);
+    }
+
+    /* Chiplet Container Hover */
+    .voiceUser__07f91:hover {
+        .chipletContainerInner__10651 {
+            background-color: var(--tambay-primary) !important;
+        }
+    }
+
+    /* Add Button Icon */
     .icon__07f91,
     .addButtonIcon__29444 {
         color: var(--tambay-tertiary);
     }
 
+    /* Boost BG Gradient */
+    .progress__0d0f9 {
+        background-image: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
+    }
+
+    /* "New Unreads" */
     .bar__7aaec {
         background-color: var(--tambay-tertiary);
     }
 
+    /* "New Unreads" Text */
     .unreadIcon__7aaec,
     .barText__7aaec {
+        background-color: var(--tambay-tertiary);
         color: var(--tambay-secondary) !important;
     }
 
+    /*  Channel Containers e.g. "Kings & Queens o(*￣▽￣*)ブ" */
     .containerDefault__29444 {
         .wrapper__29444:hover .icon__29444 {
             color: var(--tambay-primary) !important;
@@ -196,20 +230,24 @@
         }
     }
 
+    /* Tambay sa Skwela left icon */
     .flowerStar__3e3b0 {
         path {
             fill: var(--tambay-tertiary) !important;
         }
     }
 
+    /* Scrollbar Color */
     .thin__99f8c::-webkit-scrollbar-thumb {
         background-color: var(--tambay-primary);
     }
 
+    /* Unread Channels Text Color */
     .modeUnreadImportant__2ea32 .name__2ea32 {
         color: var(--tambay-tertiary);
     }
 
+    /* Unread Channels left Nub */
     .unreadImportant__2ea32 {
         background-color: var(--tambay-tertiary);
     }
@@ -222,17 +260,20 @@
         background: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
     }
 
+    /* Selected Channel BG Color */
     .selected_c69b6d {
         a {
             background: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
         }
     }
 
+    /* Selected Channel BG Color Hover */
     .modeSelected__2ea32 .link__2ea32,
     .modeSelected__2ea32:hover .link__2ea32 {
         background: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
     }
 
+    /* Selected Channel Text and Icons Color */
     .modeSelected__2ea32 {
         border-radius: var(--radius-sm);
 
