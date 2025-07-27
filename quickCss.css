@@ -203,6 +203,12 @@
         color: var(--tambay-tertiary);
     }
 
+    .container__0d0f9:hover {
+        .progress__0d0f9 {
+            background-image: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
+        }
+    }
+
     /* Boost BG Gradient */
     .progress__0d0f9 {
         background-image: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
