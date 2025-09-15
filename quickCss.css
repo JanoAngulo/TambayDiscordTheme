@@ -22,12 +22,10 @@
 
     .flex__7c0ba {
         height: fit-content !important;
-        .inner_e131a9 {
-            height: fit-content !important;
-            .align-chat-input .rtcConnectionStatus__06d62 {
-                height: fit-content !important;
-            }
-        }
+    }
+
+    .rtcConnectionStatus__06d62 {
+        height: fit-content !important;
     }
 }
 
