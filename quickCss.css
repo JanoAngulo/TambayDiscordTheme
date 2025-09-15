@@ -21,7 +21,13 @@
     width: 100%;
 
     .flex__7c0ba {
-        height: 100%;
+        height: fit-content !important;
+        .inner_e131a9 {
+            height: fit-content !important;
+            .align-chat-input .rtcConnectionStatus__06d62 {
+                height: fit-content !important;
+            }
+        }
     }
 }
 
