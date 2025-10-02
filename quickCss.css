@@ -290,18 +290,11 @@
     .modeSelected__2ea32 .link__2ea32,
     .modeSelected__2ea32:hover .link__2ea32 {
         background: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
-
-        .tabularNumbers__4bd52 {
-            color: white !important;
-        }
-
-        .icon__2ea32 {
-            color: white !important;
-        }
     }
 
-    .modeConnected__2ea32 {
-        .icon__2ea32 {
+
+    .link__2ea32 {
+        .icon__2ea32.iconLive_c69b6d {
             color: white !important;
         }
 
@@ -309,8 +302,6 @@
             color: white !important;
         }
     }
-
-
 
     /* Selected Channel Text and Icons Color */
     .modeSelected__2ea32 {
@@ -343,6 +334,10 @@
         .pencilIcon__5cda9,
         .statusText__5cda9 {
             color: white;
+        }
+
+        .tabularNumbers__4bd52 {
+            color: white !important;
         }
     }
 }
