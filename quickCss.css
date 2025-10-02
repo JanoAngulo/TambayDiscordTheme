@@ -294,10 +294,23 @@
         .tabularNumbers__4bd52 {
             color: white !important;
         }
+
         .icon__2ea32 {
             color: white !important;
         }
     }
+
+    .modeConnected__2ea32 {
+        .icon__2ea32 {
+            color: white !important;
+        }
+
+        .tabularNumbers__4bd52 {
+            color: white !important;
+        }
+    }
+
+
 
     /* Selected Channel Text and Icons Color */
     .modeSelected__2ea32 {
@@ -310,7 +323,7 @@
         }
 
         .icon__2ea32 {
-            color: white;
+            color: white !important;
         }
 
         .children__2ea32 {
