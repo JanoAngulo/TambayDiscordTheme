@@ -358,13 +358,11 @@
     }
 
     /* Connected Channel Text and Icons Color */
-    ._2ea32c412048f708-modeConnected {
-        ._4bd5201c86a2042b-tabularNumbers {
-            color: var(--tambay-tertiary) !important;
-        }
+    ._4bd5201c86a2042b-tabularNumbers {
+        color: var(--tambay-tertiary) !important;
+    }
 
-        ._2ea32c412048f708-icon {
-            color: var(--tambay-tertiary) !important;
-        }
+    ._2ea32c412048f708-icon {
+        color: var(--tambay-tertiary) !important;
     }
 }
