@@ -14,11 +14,12 @@
 }
 
 /* Hideous Panel Fix */
-._5e434347c823b592-panels {
+.panels__5e434 {
     border-radius: unset;
     left: 0;
     bottom: 0;
     width: 100%;
+    padding-top: 8px;
 
     /* .flex__7c0ba {
         height: fit-content !important;
@@ -103,23 +104,24 @@
 [aria-label="cotton-fields (channel)"] {
 
     /* Thread Bar <hr/> Color */
-    ._5126c0cd07f243a0-hasContent {
+    .hasContent__5126c {
         border-top: thin solid var(--tambay-secondary) !important;
     }
 
     /* Chat Timestamp Color */
-    .c19a557985eb7793-timestamp {
+    .timestamp_c19a55 {
         color: var(--tambay-tertiary) !important;
     }
 
     /* New Message Bar */
-    ._0f481cbbd7530492-newMessagesBar._0f481cbbd7530492-barBase {
+    .newMessagesBar__0f481 .barBase__0f481 {
         background-color: var(--tambay-primary);
     }
 }
 
+
 /* Top Bar Shade  */
-.base_c48ade:has([aria-label="Tambay sa Skwela (server)"]) .bar_c38106 {
+.base__5e434:has([aria-label="Tambay sa Skwela (server)"]) .bar_c38106 {
     background: linear-gradient(90deg, #121214 10%, var(--tambay-tertiary) 50%, #121214 90%) !important;
 
     .icon_f34534 {
@@ -137,10 +139,10 @@
 }
 
 /* Subtitle Container Bar - The one with Search */
-._5e434347c823b592-sidebar:has([aria-label="Tambay sa Skwela (server)"])~._5e434347c823b592-page {
-    .f75fb00fb7356cbe-subtitleContainer {
-        ._9293f6b2fc12398a-children {
-            ._9293f6b2fc12398a-titleWrapper {
+.sidebar__5e434:has([aria-label="Tambay sa Skwela (server)"])~.page__5e434 {
+    .subtitleContainer_f75fb0 {
+        .children__9293f {
+            .titleWrapper__9293f {
                 h1 {
                     color: var(--tambay-tertiary) !important;
                 }
@@ -154,12 +156,12 @@
 }
 
 /* Sidebar Right */
-[aria-label="council-of-six (channel)"]~.c8ffbb79449f399c-container {
-    ._5d473ecff348c314-premiumIcon path {
+[aria-label="council-of-six (channel)"]~.container_c8ffbb {
+    .premiumIcon__5d473 path {
         fill: var(--tambay-tertiary) !important;
     }
 
-    .c8ffbb79449f399c-membersGroup:not(:first-of-type) {
+    .membersGroup_c8ffbb:not(:first-of-type) {
         color: var(--tambay-primary) !important;
     }
 }
@@ -168,7 +170,7 @@
 [aria-label="Tambay sa Skwela (server)"] {
 
     /* Mic Activity Border Color */
-    ._07f9193042954787-content:has(._07f9193042954787-usernameSpeaking) ._55bab3f0b2555838-userAvatar {
+    .content__07f91:has(.usernameSpeaking__07f91) .userAvatar__55bab {
         box-shadow:
             inset 0 0 0 2px var(--tambay-tertiary),
             inset 0 0 0 3px var(--background-base-lower) !important;
@@ -176,100 +178,99 @@
 
 
     /* Live Icon */
-    .a7acaedd978a9637-live {
+    .live_a7acae {
         background-color: var(--tambay-tertiary) !important;
         color: var(--tambay-secondary);
     }
 
     /* Chiplet Container */
-    ._10651c5cfe637db6-chipletContainerInner {
+    .chipletContainerInner__10651 {
         background-color: var(--tambay-primary);
     }
 
     /* Chiplet Container Hover */
-    ._07f9193042954787-voiceUser :hover {
-        ._10651c5cfe637db6-chipletContainerInner {
+    .voiceUser__07f91:hover {
+        .chipletContainerInner__10651 {
             background-color: var(--tambay-primary) !important;
         }
     }
 
     /* Add Button Icon */
-    ._29444ba32c7fbeab-iconVisibility,
-    ._29444ba32c7fbeab-addButton {
+    .iconVisibility__29444,
+    .addButton__29444 {
         color: var(--tambay-tertiary);
     }
 
     /* Boost BG Gradient Hover */
-    ._0d0f9ddd12a3ace3-container:hover {
-        ._0d0f9ddd12a3ace3-progress {
+    .container__0d0f9:hover {
+        .progress__0d0f9 {
             background-image: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
         }
     }
 
     /* Boost BG Gradient */
-    ._0d0f9ddd12a3ace3-progress {
+    .progress__0d0f9 {
         background-image: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
     }
 
     /* "New Unreads" */
-    ._7aaec78b97ff00f7-bar {
+    .bar__7aaec {
         background-color: var(--tambay-tertiary);
-    }
 
-    /* "New Unreads" Text */
-    ._7aaec78b97ff00f7-unreadIcon,
-    ._7aaec78b97ff00f7-barText {
-        background-color: var(--tambay-tertiary);
-        color: var(--tambay-secondary) !important;
+        /* "New Unreads" Text */
+        .unreadIcon__7aaec,
+        .barText__7aaec {
+            background-color: var(--tambay-tertiary);
+            color: var(--tambay-secondary) !important;
+        }
     }
 
     /*  Channel Containers e.g. "Kings & Queens o(*￣▽￣*)ブ" */
-    ._29444ba32c7fbeab-containerDefault {
-        ._29444ba32c7fbeab-wrapper:hover .icon__29444 {
+    .iconVisibility__29444 {
+        .mainContent__29444:hover .icon__29444 {
             color: var(--tambay-primary) !important;
         }
 
         /* Channel Bar */
-        ._29444ba32c7fbeab-mainContent {
+        .mainContent__29444 {
             color: var(--tambay-primary);
 
             /* Channel Name Color */
-            .b0dfc2ed9c57037d-overflow {
+            .overflow_b0dfc2 {
                 color: var(--tambay-primary);
             }
         }
     }
 
     /* Tambay sa Skwela left icon */
-    ._3e3b0b1c0f688f9e-flowerStar {
+    .flowerStar__3e3b0 {
         path {
             fill: var(--tambay-tertiary) !important;
         }
     }
 
-    /* Scrollbar Color (Currently Not Available) */
-    .thin__99f8c::-webkit-scrollbar-thumb {
+    /* Scrollbar Color */
+    .thin_d125d2::-webkit-scrollbar-thumb {
         background-color: var(--tambay-primary);
     }
 
     /* Unread Channels Text Color */
-    ._2ea32c412048f708-modeUnreadImportant ._2ea32c412048f708-name {
+    .modeUnreadImportant__2ea32 .name__2ea32 {
         color: var(--tambay-tertiary) !important;
     }
 
+    /* Unread Channels Nub */
+    .unreadImportant__2ea32 {
+        background-color: var(--tambay-tertiary);
+    }
+
     /* Unread Channels Text Color Hover */
-    ._2ea32c412048f708-modeUnreadImportant:hover {
+    .modeUnreadImportant__2ea32:hover {
         svg path {
             fill: var(--tambay-tertiary) !important;
         }
 
         color: var(--tambay-tertiary) !important;
-    }
-
-
-    /* Unread Channels left Nub */
-    ._2ea32c412048f708-unreadImportant {
-        background-color: var(--tambay-tertiary) !important;
     }
 
     /* Current Not Available */
@@ -283,13 +284,19 @@
     } */
 
     /* Events, Browse Channels, Members, Server Boosts */
-    ._2ea32c412048f708-icon {
+    .icon__2ea32 {
         color: var(--tambay-tertiary);
     }
 
+    .modeSelected__2ea32 {
+        .icon__2ea32 {
+            color: white !important;
+        }
+    }
+
     /* Events, Browse Channels, Members, Server Boosts - Hovered */
-    ._2ea32c412048f708-modeSelected:hover {
-        ._2ea32c412048f708-icon {
+    .modeSelected__2ea32:hover {
+        .icon__2ea32 {
             color: var(--tambay-tertiary);
         }
 
@@ -316,53 +323,53 @@
     }
 
     /* Selected Channel Text and Icons Color */
-    ._2ea32c412048f708-modeSelected {
+    .modeSelected__2ea32 {
         a {
             background: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
         }
 
-        /* border-radius: var(--radius-sm); */
+        border-radius: var(--radius-sm);
 
-        /* .linkBottom__2ea32 {
+        .linkBottom__2ea32 {
             div {
                 color: white;
             }
-        } */
+        }
 
-        ._2ea32c412048f708-icon {
+        .icon__2ea32 {
             color: white !important;
         }
 
-        ._2ea32c412048f708-children {
+        .children__2ea32 {
             .actionIcon_c69b6d {
                 color: white;
             }
         }
 
-        /* .wrapper__2ea32:hover {
+        .wrapper__2ea32:hover {
             background-color: white !important;
-        } */
+        }
 
-        /* .name__2ea32 {
-            color: white;
-        } */
-
-        ._5cda953df16118b0-pencilIcon,
-        ._5cda953df16118b0-statusText {
+        .name__2ea32 {
             color: white;
         }
 
-        ._4bd5201c86a2042b-tabularNumbers {
+        .pencilIcon__5cda9,
+        .statusText__5cda9 {
+            color: white;
+        }
+
+        .tabularNumbers__4bd52 {
             color: white !important;
         }
     }
 
     /* Connected Channel Text and Icons Color */
-    ._4bd5201c86a2042b-tabularNumbers {
+    .tabularNumbers__4bd52 {
         color: var(--tambay-tertiary) !important;
     }
 
-    ._2ea32c412048f708-icon {
+    .icon__2ea32 {
         color: var(--tambay-tertiary) !important;
     }
 }
