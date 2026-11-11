@@ -7,7 +7,7 @@ Vencord theme for the **Tambay sa Skwela** server. Styles only apply inside that
 Vencord → Settings → Themes → **Edit QuickCSS**, then paste at the very top:
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/JanoAngulo/TambayDiscordTheme@main/quickCss.css");
+@import url("https://janoangulo.github.io/TambayDiscordTheme/quickCss.css");
 ```
 
 Reload Discord with `Ctrl + R`.
@@ -28,9 +28,7 @@ Animation speeds are variables too (`--tambay-shimmer-speed`, `--tambay-drift-sp
 
 ## Updating
 
-jsDelivr caches `@main` for up to 12 hours. After pushing, open this link to refresh it right away:
-
-https://purge.jsdelivr.net/gh/JanoAngulo/TambayDiscordTheme@main/quickCss.css
+Push to `main`. GitHub Pages republishes in a minute or two and caches for up to 10 minutes, then `Ctrl + R` in Discord picks it up.
 
 ## When Discord updates break it
 

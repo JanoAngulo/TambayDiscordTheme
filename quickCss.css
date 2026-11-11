@@ -9,7 +9,7 @@
 
 /*
  * Usage (Vencord QuickCSS):
- *   @import url("https://cdn.jsdelivr.net/gh/JanoAngulo/TambayDiscordTheme@main/quickCss.css");
+ *   @import url("https://janoangulo.github.io/TambayDiscordTheme/quickCss.css");
  *
  * Don't import from raw.githubusercontent.com: it serves text/plain with nosniff,
  * so Discord refuses to load it as a stylesheet.
