@@ -39,6 +39,13 @@
     --tambay-shimmer-speed: 8s; /* selected channel gradient loop */
     --tambay-drift-speed: 14s;  /* top bar glow drift */
 
+    /* MOTION: BetterAnimations-style enters (ported from its preinstalled pack defaults) */
+    --tambay-pop-dur: 200ms;                                     /* slip / scale / fade */
+    --tambay-layer-dur: 250ms;                                   /* settings & full-screen layers */
+    --tambay-ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);   /* outBack(1.7) — BA's signature overshoot */
+    --tambay-ease-inout-quart: cubic-bezier(0.76, 0, 0.24, 1);   /* modals / backdrop */
+    --tambay-ease-inout-cubic: cubic-bezier(0.65, 0, 0.35, 1);   /* layers (settings) */
+
     /* DISCORD OVERRIDES (global) */
     --background-modifier-active: #352c28;
 }
@@ -283,6 +290,75 @@
     animation: tambay-drop-in var(--tambay-dur) var(--tambay-ease-out);
 }
 
+
+/* ============================================================
+   MOTION: BETTERANIMATIONS-STYLE ENTERS
+   Recreates the enter animations of the BetterAnimations
+   BetterDiscord plugin (its "preinstalled" pack defaults) in
+   pure CSS. Exit animations need JS, so only enters are ported.
+   Mapping (module → animation, duration, easing):
+     Messages / Channel list / Popouts / Tooltips / Modals
+       → Slip   (5px translate + fade, 200ms, outBack 1.7)
+     Context menu / Layers (settings)
+       → Scale  (0.9 → 1 + fade, 200ms, outBack / inOutCubic)
+     Modal backdrop
+       → Solid  (fade, 200ms, inOutQuart)
+   Uses `translate`/`scale` properties (not `transform`) so it
+   composes with Discord's own inline spring styles instead of
+   fighting them.
+   ============================================================ */
+
+/* ---------- Messages: slip up on channel load / new message (server-scoped) ---------- */
+.sidebar_pog62O:has([aria-label="Tambay sa Skwela (server)"]) ~ .page_pog62O li[id^="chat-messages"] {
+    animation: tambay-slip-up var(--tambay-pop-dur) var(--tambay-ease-out-back) backwards;
+}
+
+/* ---------- Channel list: slips down when entering the server ---------- */
+[aria-label="Tambay sa Skwela (server)"] {
+    animation: tambay-slip-down var(--tambay-pop-dur) var(--tambay-ease-out-back);
+}
+
+/* ---------- Popouts & tooltips (floating layers): slip toward anchor ---------- */
+.layerContainer_VVADeK > .layer_VVADeK {
+    animation: tambay-slip-up var(--tambay-pop-dur) var(--tambay-ease-out-back);
+}
+
+/* Tooltip direction follows its anchor, like BA's "Auto" direction */
+.layerContainer_VVADeK > .layer_VVADeK:has([data-position="bottom"], .tooltipBottom_3_v8qp) {
+    animation-name: tambay-slip-down;
+}
+.layerContainer_VVADeK > .layer_VVADeK:has([data-position="left"], .tooltipLeft_3_v8qp) {
+    animation-name: tambay-slip-left;
+}
+.layerContainer_VVADeK > .layer_VVADeK:has([data-position="right"], .tooltipRight_3_v8qp) {
+    animation-name: tambay-slip-right;
+}
+
+/* ---------- Context menus: scale in with overshoot (BA "Scale", 0.9 → 1) ---------- */
+.menu_M3qk4j {
+    animation: tambay-scale-in var(--tambay-pop-dur) var(--tambay-ease-out-back);
+}
+
+/* Submenus get the same treatment, anchored to their opening edge */
+.submenu_M3qk4j {
+    transform-origin: 0 20%;
+}
+
+/* ---------- Modals: slip up + fade (BA default: Slip, inOutQuart) ---------- */
+.root__KoJTP {
+    animation: tambay-slip-up var(--tambay-pop-dur) var(--tambay-ease-inout-quart);
+}
+
+/* ---------- Modal backdrop: solid fade (BA "Solid" backdrop) ---------- */
+.backdrop_C_WHpX {
+    animation: tambay-fade-in var(--tambay-pop-dur) var(--tambay-ease-inout-quart);
+}
+
+/* ---------- Layers (settings open): scale in (BA "Scale", layers module) ---------- */
+.layers_Fd0FEH > .layer_Fd0FEH {
+    animation: tambay-layer-in var(--tambay-layer-dur) var(--tambay-ease-inout-cubic);
+}
+
 [aria-label="Tambay sa Skwela (server)"] {
 
     /* ---------- Channel rows: hover slide + color fade ---------- */
@@ -372,14 +448,65 @@
     50%      { box-shadow: 0 0 10px 1px color-mix(in srgb, var(--tambay-tertiary) 65%, transparent); }
 }
 
+/* BetterAnimations-style enters */
+@keyframes tambay-slip-up {
+    from { translate: 0 5px; opacity: 0; }
+}
+
+@keyframes tambay-slip-down {
+    from { translate: 0 -5px; opacity: 0; }
+}
+
+@keyframes tambay-slip-left {
+    from { translate: 5px 0; opacity: 0; }
+}
+
+@keyframes tambay-slip-right {
+    from { translate: -5px 0; opacity: 0; }
+}
+
+@keyframes tambay-scale-in {
+    from { scale: 0.9; opacity: 0; }
+}
+
+@keyframes tambay-layer-in {
+    from { scale: 0.97; opacity: 0; }
+}
+
+@keyframes tambay-fade-in {
+    from { opacity: 0; }
+}
+
 /* ---------- Reduced motion: kill everything above ---------- */
-.reduce-motion :is([aria-label="Tambay sa Skwela (server)"] *, .bar_3zSH5d, .newMessagesBar_j9Vvzj) {
+.reduce-motion :is(
+    [aria-label="Tambay sa Skwela (server)"],
+    [aria-label="Tambay sa Skwela (server)"] *,
+    .bar_3zSH5d,
+    .newMessagesBar_j9Vvzj,
+    li[id^="chat-messages"],
+    .layer_VVADeK,
+    .menu_M3qk4j,
+    .root__KoJTP,
+    .backdrop_C_WHpX,
+    .layer_Fd0FEH
+) {
     animation: none !important;
     transition: none !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    :is([aria-label="Tambay sa Skwela (server)"] *, .bar_3zSH5d, .newMessagesBar_j9Vvzj) {
+    :is(
+        [aria-label="Tambay sa Skwela (server)"],
+        [aria-label="Tambay sa Skwela (server)"] *,
+        .bar_3zSH5d,
+        .newMessagesBar_j9Vvzj,
+        li[id^="chat-messages"],
+        .layer_VVADeK,
+        .menu_M3qk4j,
+        .root__KoJTP,
+        .backdrop_C_WHpX,
+        .layer_Fd0FEH
+    ) {
         animation: none !important;
         transition: none !important;
     }

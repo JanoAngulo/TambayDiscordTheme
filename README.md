@@ -24,7 +24,11 @@ Override the palette below the import:
 }
 ```
 
-Animation speeds are variables too (`--tambay-shimmer-speed`, `--tambay-drift-speed`, `--tambay-dur`). Animations turn off when Discord's **Reduce Motion** setting is on.
+Animation speeds are variables too (`--tambay-shimmer-speed`, `--tambay-drift-speed`, `--tambay-dur`, `--tambay-pop-dur`, `--tambay-layer-dur`). Animations turn off when Discord's **Reduce Motion** setting is on.
+
+## BetterAnimations-style enters
+
+The theme recreates the enter animations of the [BetterAnimations](https://github.com/okdevme/DiscordPlugins) plugin's preinstalled pack in pure CSS: messages, the channel list, popouts, tooltips, and modals **slip** in (5px + fade, 200ms, `outBack` overshoot); context menus and the settings layer **scale** in; the modal backdrop fades. Tooltips slip from the side they're anchored to. Exit animations require JavaScript, so a CSS theme can only recreate enters — install the actual plugin (BetterDiscord only) if you want exits too.
 
 ## Updating
 
