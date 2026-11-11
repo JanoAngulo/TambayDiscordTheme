@@ -1,375 +1,386 @@
-/* @import url(https://raw.githubusercontent.com/JanoAngulo/TambayDiscordTheme/refs/heads/main/quickCss.css); */
-/* Ctrl + shift + i = open discord console */
+/**
+ * @name Tambay
+ * @description Tambay sa Skwela server theme. Scoped to that server only.
+ * @source https://github.com/JanoAngulo/TambayDiscordTheme
+ *
+ * Discord class hashes last mapped: 2026-11-10 (new `_XXXXXX` hash scheme).
+ * Ctrl + Shift + I = open Discord DevTools
+ */
 
+/*
+ * Usage (Vencord QuickCSS):
+ *   @import url("https://cdn.jsdelivr.net/gh/JanoAngulo/TambayDiscordTheme@main/quickCss.css");
+ *
+ * Don't import from raw.githubusercontent.com: it serves text/plain with nosniff,
+ * so Discord refuses to load it as a stylesheet.
+ */
+
+
+/* ============================================================
+   SETTINGS
+   ============================================================ */
 :root {
+    /* PALETTE */
     --tambay-primary: #dc794e;
     --tambay-secondary: #613e31;
     --tambay-tertiary: #f2af45;
+    --tambay-on-accent: #ffffff;    /* text/icons on top of gradients */
+    --tambay-bar-base: #121214;     /* edge color of the top bar shade */
+
+    /* DERIVED */
+    --tambay-gradient: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
+    --tambay-bar-gradient: linear-gradient(90deg, var(--tambay-bar-base) 10%, var(--tambay-tertiary) 50%, var(--tambay-bar-base) 90%);
+    --tambay-gradient-loop: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary), var(--tambay-primary)); /* seamless when tiled at 200% */
+
+    /* MOTION */
+    --tambay-ease-out: cubic-bezier(0.22, 1, 0.36, 1); /* easeOutQuint */
+    --tambay-dur-fast: 160ms;   /* hover, color */
+    --tambay-dur: 280ms;        /* enter / slide-in */
+    --tambay-shimmer-speed: 8s; /* selected channel gradient loop */
+    --tambay-drift-speed: 14s;  /* top bar glow drift */
+
+    /* DISCORD OVERRIDES (global) */
     --background-modifier-active: #352c28;
 }
 
-/* Read All Button Fix */
+
+/* ============================================================
+   GLOBAL FIXES
+   ============================================================ */
+
+/* Read All button */
 .vc-ranb-button {
     border: 0;
 }
 
-/* Hideous Panel Fix */
-.panels__5e434 {
+/* User panel: flush to the bottom edge */
+.panels_pog62O {
     border-radius: unset;
     left: 0;
     bottom: 0;
     width: 100%;
     padding-top: 8px;
-
-    /* .flex__7c0ba {
-        height: fit-content !important;
-    }
-
-    .rtcConnectionStatus__06d62 {
-        height: fit-content !important;
-    } */
-}
-
-/* useless-important-infos */
-[aria-label="welcome (channel)"],
-[aria-label="announcements (channel)"],
-[aria-label="introduce-yourself (channel)"],
-[aria-label="free-games (channel)"],
-[aria-label="ranks (channel)"],
-
-/* Administrator Only */
-[aria-label="audit-logs (channel)"],
-[aria-label="private-saves (channel)"],
-[aria-label="principals (channel)"],
-
-/* Gawa Laro */
-[aria-label="project-1 (channel)"],
-[aria-label="p1-brainstorm (channel)"],
-[aria-label="p1-concept-art (channel)"],
-[aria-label="p1-storyboard (channel)"],
-[aria-label="p1-game-mechanics (channel)"],
-[aria-label="p1-sound-design (channel)"],
-[aria-label="p1-references (channel)"],
-
-/* Kings & Queens */
-[aria-label="voice-chat (channel)"],
-[aria-label="nsfw (channel)"],
-[aria-label="council-of-six (channel)"],
-[aria-label="council-saves (channel)"],
-[aria-label="pandoras-box (channel)"],
-[aria-label="clipped-voices (channel)"],
-[aria-label="instant-replays (channel)"],
-[aria-label="bot-commands-◉_◉ (channel)"],
-[aria-label="random-tots (channel)"],
-
-/* Dank Stuff */
-[aria-label="dank-memes-💩 (channel)"],
-[aria-label="wholesome-posting (channel)"],
-[aria-label="share-videos (channel)"],
-[aria-label="bot-commands-◉_◉ (channel)"],
-
-/* Games Stuff */
-[aria-label="games🎮🎮 (channel)"],
-[aria-label="genshin-notes (channel)"],
-[aria-label="hsr-notes (channel)"],
-[aria-label="genshin-wizard (channel)"],
-[aria-label="league-patch-notes (channel)"],
-[aria-label="overwatch-notes (channel)"],
-[aria-label="mc-notes (channel)"],
-[aria-label="pso2-notes (channel)"],
-[aria-label="minecraft (channel)"],
-[aria-label="monster-hunter (channel)"],
-[aria-label="pso2 (channel)"],
-[aria-label="aq-ni-kurt (channel)"],
-[aria-label="play-chess (channel)"],
-[aria-label="terraria (channel)"],
-[aria-label="project-zomboid🧟‍♂️ (channel)"],
-[aria-label="bpsr (channel)"],
-
-
-/* Overview */
-[aria-label="general👨👩 (channel)"],
-[aria-label="suggestions (channel)"],
-[aria-label="tier-list (channel)"],
-
-
-
-/* Game Channel */
-[aria-label="voice-chat (channel)"],
-
-/* Study Room */
-[aria-label="study📘📗📖 (channel)"],
-
-/* Solitary Confinement */
-[aria-label="cotton-fields (channel)"] {
-
-    /* Thread Bar <hr/> Color */
-    .hasContent__5126c {
-        border-top: thin solid var(--tambay-secondary) !important;
-    }
-
-    /* Chat Timestamp Color */
-    .timestamp_c19a55 {
-        color: var(--tambay-tertiary) !important;
-    }
-
-    /* New Message Bar */
-    .newMessagesBar__0f481 .barBase__0f481 {
-        background-color: var(--tambay-primary);
-    }
 }
 
 
-/* Top Bar Shade  */
-.base__5e434:has([aria-label="Tambay sa Skwela (server)"]) .bar_c38106 {
-    background: linear-gradient(90deg, #121214 10%, var(--tambay-tertiary) 50%, #121214 90%) !important;
+/* ============================================================
+   SPEAKING COLOR (server-scoped)
+   Discord draws the speaking ring with --status-speaking (inline style).
+   Re-applied on nested .theme-* wrappers, which re-declare it.
+   ============================================================ */
+:is([aria-label="Tambay sa Skwela (server)"], .sidebar_pog62O:has([aria-label="Tambay sa Skwela (server)"]) ~ .page_pog62O),
+:is([aria-label="Tambay sa Skwela (server)"], .sidebar_pog62O:has([aria-label="Tambay sa Skwela (server)"]) ~ .page_pog62O) :is(.theme-dark, .theme-darker, .theme-midnight, .theme-light) {
+    --status-speaking: var(--tambay-tertiary);
+}
 
-    .icon_f34534 {
+
+/* ============================================================
+   TOP BAR (server-scoped)
+   ============================================================ */
+.base_pog62O:has([aria-label="Tambay sa Skwela (server)"]) .bar_3zSH5d {
+    background-image: var(--tambay-bar-gradient) !important; /* image only, so background-position can animate */
+
+    .icon_qqAqr1 {
         border-radius: 999px !important;
         border: 1px solid var(--tambay-secondary);
     }
 
-    .defaultColor__4bd52 {
-        color: #121214 !important;
+    .defaultColor_MMUIw6 {
+        color: var(--tambay-bar-base) !important;
     }
 
     svg {
-        color: white !important;
+        color: var(--tambay-on-accent) !important;
     }
 }
 
-/* Subtitle Container Bar - The one with Search */
-.sidebar__5e434:has([aria-label="Tambay sa Skwela (server)"])~.page__5e434 {
-    .subtitleContainer_f75fb0 {
-        .children__9293f {
-            .titleWrapper__9293f {
-                h1 {
-                    color: var(--tambay-tertiary) !important;
-                }
-            }
 
-            svg {
-                color: var(--tambay-tertiary) !important;
-            }
+/* ============================================================
+   CHAT AREA (server-scoped)
+   ============================================================ */
+.sidebar_pog62O:has([aria-label="Tambay sa Skwela (server)"]) ~ .page_pog62O {
+
+    /* Channel header title + icon */
+    .subtitleContainer_z_gUBg .children_ybUK7Z {
+        .titleWrapper_ybUK7Z h1,
+        svg {
+            color: var(--tambay-tertiary) !important;
         }
     }
+
+    /* Message divider line */
+    .hasContent_4TfzT5 {
+        border-top: thin solid var(--tambay-secondary) !important;
+    }
+
+    /* Timestamps */
+    .timestamp_2i8Bfm {
+        color: var(--tambay-tertiary) !important;
+    }
+
+    /* "New messages" bar */
+    .newMessagesBar_j9Vvzj .barBase_j9Vvzj {
+        background-color: var(--tambay-primary);
+    }
 }
 
-/* Sidebar Right */
-[aria-label="council-of-six (channel)"]~.container_c8ffbb {
-    .premiumIcon__5d473 path {
+
+/* ============================================================
+   MEMBER LIST
+   ============================================================ */
+[aria-label="council-of-six (channel)"] ~ .container_86es0b {
+    .premiumIcon_uc7PyD path {
         fill: var(--tambay-tertiary) !important;
     }
 
-    .membersGroup_c8ffbb:not(:first-of-type) {
+    .membersGroup_86es0b:not(:first-of-type) {
         color: var(--tambay-primary) !important;
     }
 }
 
-/* Sidebar Left  */
+
+/* ============================================================
+   CHANNEL SIDEBAR (server-scoped)
+   ============================================================ */
 [aria-label="Tambay sa Skwela (server)"] {
 
-    /* Mic Activity Border Color */
-    .content__07f91:has(.usernameSpeaking__07f91) .userAvatar__55bab {
-        box-shadow:
-            inset 0 0 0 2px var(--tambay-tertiary),
-            inset 0 0 0 3px var(--background-base-lower) !important;
+    /* Discord variable overrides */
+    --scrollbar-thin-thumb: var(--tambay-primary);
+    --scrollbar-auto-thumb: var(--tambay-primary);
+
+    /* ---------- Server icon ---------- */
+    .flowerStar_d3vyhc path {
+        fill: var(--tambay-tertiary) !important;
     }
 
-
-    /* Live Icon */
-    .live_a7acae {
-        background-color: var(--tambay-tertiary) !important;
-        color: var(--tambay-secondary);
+    /* ---------- Boost progress ---------- */
+    .progress_BFMMcK,
+    .container_BFMMcK:hover .progress_BFMMcK {
+        background-image: var(--tambay-gradient);
     }
 
-    /* Chiplet Container */
-    .chipletContainerInner__10651 {
-        background-color: var(--tambay-primary);
-    }
-
-    /* Chiplet Container Hover */
-    .voiceUser__07f91:hover {
-        .chipletContainerInner__10651 {
-            background-color: var(--tambay-primary) !important;
-        }
-    }
-
-    /* Add Button Icon */
-    .iconVisibility__29444,
-    .addButton__29444 {
-        color: var(--tambay-tertiary);
-    }
-
-    /* Boost BG Gradient Hover */
-    .container__0d0f9:hover {
-        .progress__0d0f9 {
-            background-image: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
-        }
-    }
-
-    /* Boost BG Gradient */
-    .progress__0d0f9 {
-        background-image: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
-    }
-
-    /* "New Unreads" */
-    .bar__7aaec {
+    /* ---------- "New unreads" bar ---------- */
+    .bar_t1P8Sn {
         background-color: var(--tambay-tertiary);
 
-        /* "New Unreads" Text */
-        .unreadIcon__7aaec,
-        .barText__7aaec {
+        .unreadIcon_t1P8Sn,
+        .barText_t1P8Sn {
             background-color: var(--tambay-tertiary);
             color: var(--tambay-secondary) !important;
         }
     }
 
-    /*  Channel Containers e.g. "Kings & Queens o(*￣▽￣*)ブ" */
-    .iconVisibility__29444 {
-        .mainContent__29444:hover .icon__29444 {
-            color: var(--tambay-primary) !important;
-        }
-
-        /* Channel Bar */
-        .mainContent__29444 {
-            color: var(--tambay-primary);
-
-            /* Channel Name Color */
-            .overflow_b0dfc2 {
-                color: var(--tambay-primary);
-            }
-        }
-    }
-
-    /* Tambay sa Skwela left icon */
-    .flowerStar__3e3b0 {
-        path {
-            fill: var(--tambay-tertiary) !important;
-        }
-    }
-
-    /* Scrollbar Color */
-    .thin_d125d2::-webkit-scrollbar-thumb {
-        background-color: var(--tambay-primary);
-    }
-
-    /* Unread Channels Text Color */
-    .modeUnreadImportant__2ea32 .name__2ea32 {
-        color: var(--tambay-tertiary) !important;
-    }
-
-    /* Unread Channels Nub */
-    .unreadImportant__2ea32 {
-        background-color: var(--tambay-tertiary);
-    }
-
-    /* Unread Channels Text Color Hover */
-    .modeUnreadImportant__2ea32:hover {
-        svg path {
-            fill: var(--tambay-tertiary) !important;
-        }
-
-        color: var(--tambay-tertiary) !important;
-    }
-
-    /* Current Not Available */
-    /* .container_eff079:hover .progressBar_eff079 {
-        background: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
-    } */
-
-    /* Current Not Available */
-    /* .progressBar_eff079 {
-        background: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
-    } */
-
-    /* Events, Browse Channels, Members, Server Boosts */
-    .icon__2ea32 {
+    /* ---------- Categories, e.g. "Kings & Queens" ---------- */
+    .addButton_yOdhm_ {
         color: var(--tambay-tertiary);
     }
 
-    .modeSelected__2ea32 {
-        .icon__2ea32 {
-            color: white !important;
+    .iconVisibility_yOdhm_ {
+        color: var(--tambay-tertiary);
+
+        .mainContent_yOdhm_ {
+            color: var(--tambay-primary);
+
+            .overflow__WDjet {
+                color: var(--tambay-primary);
+            }
+        }
+
+        .mainContent_yOdhm_:hover .icon_yOdhm_ {
+            color: var(--tambay-primary) !important;
         }
     }
 
-    /* Events, Browse Channels, Members, Server Boosts - Hovered */
-    .modeSelected__2ea32:hover {
-        .icon__2ea32 {
-            color: var(--tambay-tertiary);
-        }
-
-        a {
-            background: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
-        }
+    /* ---------- Channel rows: default ---------- */
+    .icon_TNyK-N {
+        color: var(--tambay-tertiary) !important;
     }
 
-    /* Selected Channel BG Color Hover */
-    .modeSelected__2ea32 .link__2ea32,
-    .modeSelected__2ea32:hover .link__2ea32 {
-        background: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
+    .tabularNumbers_MMUIw6 {
+        color: var(--tambay-tertiary) !important;
     }
 
-
-    .link__2ea32 {
-        .icon__2ea32.iconLive_c69b6d {
-            color: white !important;
-        }
-
-        .tabularNumbers__4bd52 {
-            color: white !important;
-        }
+    /* ---------- Channel rows: unread ---------- */
+    .unreadImportant_TNyK-N {
+        background-color: var(--tambay-tertiary);
     }
 
-    /* Selected Channel Text and Icons Color */
-    .modeSelected__2ea32 {
-        a {
-            background: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
-        }
+    .modeUnreadImportant_TNyK-N .name_TNyK-N,
+    .modeUnreadImportant_TNyK-N:hover {
+        color: var(--tambay-tertiary) !important;
+    }
 
+    .modeUnreadImportant_TNyK-N:hover svg path {
+        fill: var(--tambay-tertiary) !important;
+    }
+
+    /* ---------- Channel rows: selected ---------- */
+    .modeSelected_TNyK-N {
         border-radius: var(--radius-sm);
 
-        .linkBottom__2ea32 {
-            div {
-                color: white;
-            }
+        a,
+        .link_TNyK-N {
+            background: var(--tambay-gradient-loop);
+            background-size: 200% 100%;
         }
 
-        .icon__2ea32 {
-            color: white !important;
+        .name_TNyK-N,
+        .linkBottom_TNyK-N div,
+        .children_TNyK-N .actionIcon_Wx6SnQ,
+        .pencilIcon_UqhBJC,
+        .statusText_UqhBJC {
+            color: var(--tambay-on-accent);
         }
 
-        .children__2ea32 {
-            .actionIcon_c69b6d {
-                color: white;
-            }
+        .icon_TNyK-N,
+        .tabularNumbers_MMUIw6 {
+            color: var(--tambay-on-accent) !important;
         }
 
-        .wrapper__2ea32:hover {
-            background-color: white !important;
-        }
-
-        .name__2ea32 {
-            color: white;
-        }
-
-        .pencilIcon__5cda9,
-        .statusText__5cda9 {
-            color: white;
-        }
-
-        .tabularNumbers__4bd52 {
-            color: white !important;
+        .wrapper_TNyK-N:hover {
+            background-color: var(--tambay-on-accent) !important;
         }
     }
 
-    /* Connected Channel Text and Icons Color */
-    .tabularNumbers__4bd52 {
-        color: var(--tambay-tertiary) !important;
+    .modeSelected_TNyK-N:hover .link_TNyK-N {
+        background: var(--tambay-gradient-loop);
+        background-size: 200% 100%;
     }
 
-    .icon__2ea32 {
-        color: var(--tambay-tertiary) !important;
+    /* ---------- Voice users ---------- */
+    .speaking_ieJ4Sq .avatarSpeakingOutline_ieJ4Sq {
+        outline: 2px solid var(--tambay-tertiary); /* no !important: it would block the pulse */
+    }
+
+    .chipletContainerInner_k8jyN7,
+    .voiceUser_ieJ4Sq:hover .chipletContainerInner_k8jyN7 {
+        background-color: var(--tambay-primary) !important;
+    }
+
+    /* "LIVE" badge on streaming voice users */
+    .badgeWrapper_wE-IXX .notification_4guu7- {
+        --badge-notification-background: var(--tambay-tertiary);
+        --badge-notification-border: var(--tambay-tertiary);
+        color: var(--tambay-secondary) !important; /* beats .defaultColor_MMUIw6 */
+    }
+}
+
+
+/* ============================================================
+   MOTION
+   Delete this whole section to turn all animations off.
+   Respects Discord's "Reduce Motion" setting and the OS setting.
+   ============================================================ */
+
+/* ---------- Top bar: glow slowly drifts around the center ---------- */
+.base_pog62O:has([aria-label="Tambay sa Skwela (server)"]) .bar_3zSH5d {
+    background-size: 140% 100%;
+    animation: tambay-drift var(--tambay-drift-speed) ease-in-out infinite alternate;
+}
+
+/* ---------- Chat: "new messages" bar slides down ---------- */
+.sidebar_pog62O:has([aria-label="Tambay sa Skwela (server)"]) ~ .page_pog62O .newMessagesBar_j9Vvzj {
+    animation: tambay-drop-in var(--tambay-dur) var(--tambay-ease-out);
+}
+
+[aria-label="Tambay sa Skwela (server)"] {
+
+    /* ---------- Channel rows: hover slide + color fade ---------- */
+    .link_TNyK-N {
+        transition:
+            translate var(--tambay-dur-fast) var(--tambay-ease-out),
+            background-color var(--tambay-dur-fast) ease-out;
+    }
+
+    .name_TNyK-N,
+    .icon_TNyK-N {
+        transition: color var(--tambay-dur-fast) ease-out;
+    }
+
+    .wrapper_TNyK-N:hover .link_TNyK-N:not(.modeSelected_TNyK-N .link_TNyK-N) {
+        translate: 3px 0;
+    }
+
+    /* ---------- Categories: color fade ---------- */
+    .mainContent_yOdhm_,
+    .mainContent_yOdhm_ .icon_yOdhm_,
+    .overflow__WDjet {
+        transition: color var(--tambay-dur-fast) ease-out;
+    }
+
+    /* ---------- Selected channel: gradient shimmer ---------- */
+    .modeSelected_TNyK-N a,
+    .modeSelected_TNyK-N .link_TNyK-N {
+        animation: tambay-shimmer var(--tambay-shimmer-speed) linear infinite;
+    }
+
+    /* ---------- Unread nub: grows in ---------- */
+    .unreadImportant_TNyK-N {
+        animation: tambay-grow-y var(--tambay-dur) var(--tambay-ease-out);
+    }
+
+    /* ---------- "New unreads" pill: rises in ---------- */
+    .bar_t1P8Sn {
+        animation: tambay-pop-in var(--tambay-dur) var(--tambay-ease-out);
+    }
+
+    /* ---------- Voice: speaking ring breathes ---------- */
+    .speaking_ieJ4Sq .avatarSpeakingOutline_ieJ4Sq {
+        animation: tambay-speak 1.4s ease-in-out infinite;
+    }
+
+    /* ---------- Voice: LIVE badge glow ---------- */
+    .badgeWrapper_wE-IXX .notification_4guu7- {
+        animation: tambay-live 2.4s ease-in-out infinite;
+    }
+
+    /* ---------- Voice chiplet: color fade ---------- */
+    .chipletContainerInner_k8jyN7 {
+        transition: background-color var(--tambay-dur-fast) ease-out;
+    }
+}
+
+@keyframes tambay-drift {
+    from { background-position: 0% 0; }
+    to   { background-position: 100% 0; }
+}
+
+@keyframes tambay-shimmer {
+    from { background-position: 0% 0; }
+    to   { background-position: 200% 0; }
+}
+
+@keyframes tambay-drop-in {
+    from { translate: 0 -100%; opacity: 0; }
+}
+
+@keyframes tambay-pop-in {
+    from { translate: 0 6px; scale: 0.96; opacity: 0; }
+}
+
+@keyframes tambay-grow-y {
+    from { scale: 1 0; }
+}
+
+@keyframes tambay-speak {
+    0%, 100% { outline-offset: 2px; outline-color: var(--tambay-tertiary); }
+    50%      { outline-offset: 4px; outline-color: color-mix(in srgb, var(--tambay-tertiary) 45%, transparent); }
+}
+
+@keyframes tambay-live {
+    0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--tambay-tertiary) 0%, transparent); }
+    50%      { box-shadow: 0 0 10px 1px color-mix(in srgb, var(--tambay-tertiary) 65%, transparent); }
+}
+
+/* ---------- Reduced motion: kill everything above ---------- */
+.reduce-motion :is([aria-label="Tambay sa Skwela (server)"] *, .bar_3zSH5d, .newMessagesBar_j9Vvzj) {
+    animation: none !important;
+    transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :is([aria-label="Tambay sa Skwela (server)"] *, .bar_3zSH5d, .newMessagesBar_j9Vvzj) {
+        animation: none !important;
+        transition: none !important;
     }
 }
