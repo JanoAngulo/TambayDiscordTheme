@@ -30,6 +30,8 @@
     /* DERIVED */
     --tambay-gradient: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary));
     --tambay-bar-gradient: linear-gradient(90deg, var(--tambay-bar-base) 10%, var(--tambay-tertiary) 50%, var(--tambay-bar-base) 90%);
+    --tambay-boost-gradient: linear-gradient(90deg in oklch, oklch(67.8% 0.136 43.4), oklch(79.9% 0.142 75.2)); /* primary → tertiary, OKLCH-interpolated so the midpoint stays saturated */
+    --tambay-boost-track: linear-gradient(90deg in oklch, oklch(40.1% 0.054 41.1), oklch(67.8% 0.136 43.4), oklch(79.9% 0.142 75.2)); /* secondary → primary → tertiary */
     --tambay-gradient-loop: linear-gradient(90deg, var(--tambay-primary), var(--tambay-tertiary), var(--tambay-primary)); /* seamless when tiled at 200% */
 
     /* MOTION */
@@ -66,7 +68,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    padding-top: 8px;
+    padding: 0 !important; /* removes the gap above the nameplate banner */
 }
 
 
@@ -163,7 +165,15 @@
     /* ---------- Boost progress ---------- */
     .progress_BFMMcK,
     .container_BFMMcK:hover .progress_BFMMcK {
-        background-image: var(--tambay-gradient);
+        background-image: var(--tambay-boost-gradient);
+    }
+
+    /* Track behind the fill: Discord paints the server's colors under a 65% black layer */
+    .progressContainer_BFMMcK,
+    .container_BFMMcK:hover .progressContainer_BFMMcK {
+        background-image:
+            linear-gradient(rgb(0 0 0 / 0.65), rgb(0 0 0 / 0.65)),
+            var(--tambay-boost-track) !important;
     }
 
     /* ---------- "New unreads" bar ---------- */
@@ -271,21 +281,28 @@
         color: var(--tambay-secondary) !important; /* beats .defaultColor_MMUIw6 */
     }
 
-    /* Muted / deafened icons next to voice users */
-    .voiceUser_ieJ4Sq {
-        --status-danger: var(--tambay-tertiary);
-        --icon-feedback-critical: var(--tambay-tertiary);
+    /* Muted / deafened icons next to voice users (svg uses currentColor) */
+    .icons_YUoOxm .icon_YUoOxm {
+        color: var(--tambay-tertiary) !important;
     }
 }
 
 
 /* ============================================================
    USER PANEL: MUTED / DEAFENED (server-scoped)
-   Discord paints the slashed mic/headset with its danger color.
+   Slashed mic/headset: .redIcon / .strikethrough use --icon-feedback-critical.
    ============================================================ */
 .sidebar_pog62O:has([aria-label="Tambay sa Skwela (server)"]) .panels_pog62O {
-    --status-danger: var(--tambay-tertiary);
-    --icon-feedback-critical: var(--tambay-tertiary);
+    .redIcon_g6VwXp,
+    .redIcon__WEKcz,
+    .strikethrough__WEKcz {
+        color: var(--tambay-tertiary) !important;
+    }
+
+    *  {
+        --status-danger: var(--tambay-tertiary);
+        --icon-feedback-critical: var(--tambay-tertiary);
+    }
 }
 
 
