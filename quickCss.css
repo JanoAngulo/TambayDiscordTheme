@@ -270,6 +270,22 @@
         --badge-notification-border: var(--tambay-tertiary);
         color: var(--tambay-secondary) !important; /* beats .defaultColor_MMUIw6 */
     }
+
+    /* Muted / deafened icons next to voice users */
+    .voiceUser_ieJ4Sq {
+        --status-danger: var(--tambay-tertiary);
+        --icon-feedback-critical: var(--tambay-tertiary);
+    }
+}
+
+
+/* ============================================================
+   USER PANEL: MUTED / DEAFENED (server-scoped)
+   Discord paints the slashed mic/headset with its danger color.
+   ============================================================ */
+.sidebar_pog62O:has([aria-label="Tambay sa Skwela (server)"]) .panels_pog62O {
+    --status-danger: var(--tambay-tertiary);
+    --icon-feedback-critical: var(--tambay-tertiary);
 }
 
 
